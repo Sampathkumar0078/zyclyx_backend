@@ -1,7 +1,7 @@
 var express = require('express');
 var users = express.Router();
 var port = process.env.PORT || 3000;
-var database=require('../Routes/Database/DBConnections');
+var database=require('./Database/DBConnections');
 var multer=require('multer');
 process.env.secretkey='zyclyx';
 
