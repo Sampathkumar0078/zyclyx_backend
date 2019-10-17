@@ -120,7 +120,7 @@ var GetCandidateJobs=require('./GetCandidateJobs');{
 app.use('/GetCandidateJobs',GetCandidateJobs)
 }
 
-app.listen(port,'192.168.1.56',function(){
+app.listen(port,function(){
     console.log("Server is running on port: "+port);
 })
 
