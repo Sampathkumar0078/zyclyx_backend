@@ -5,7 +5,9 @@
   "repository": "https://github.com/Sampathkumar0078/TestRepo",
   "main": "Server.js",
   "scripts": {
-    "test": "node Server.js"
+    "test": "node Server.js",
+    "start":"node server.js",
+    "heroku-postbiuld":"npm install && npm run build"
   },
   "keywords": [
     "nodejs",
