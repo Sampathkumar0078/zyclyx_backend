@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+  
+    
+    <div id="user">
+   
+        
+<form method="post" enctype="multipart/form-data">
+<select name="title" id="user1" >
+    
+</select>
+<input type="button" name="submit" value="submit" id='mybtn'>
+</form>
+
+</div>
+  <script>
+      document.getElementById("mybtn").addEventListener("click", displayDate);
+      function displayDate(event){
+          console.log("hello");
+        event.preventDefault();
+         fetch('http://192.168.1.56:3000/GetCandidateJobs/GetCandidateJobs')
+        
+        //fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json =>{
+  console.log("hello11")
+  })
+      }
+
+
+      function submit(){
+          fetch('http://192.168.1.56:3000/ActivePositions/ActivePositions')
+          .then(Response=>Response.json())
+          .then(json=>{
+              return json.map(user=>{
+                  let html=document.getElementById('user1');
+                  html.innerHTML +=`
+                    <option value=${user.jobtitle}>${user.jobtitle}</option>
+                   `
+                  
+              })
+
+          })
+      }
+      submit();
+    
+  </script>
+
+</body>
+</html>
