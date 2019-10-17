@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "ZyclyxRegisterCode",
   "repository": "https://github.com/Sampathkumar0078/TestRepo",
-  "main": "Register.js",
+  "main": "Server.js",
   "scripts": {
-    "test": "node Register.js"
+    "test": "node Server.js"
   },
   "keywords": [
     "nodejs",
