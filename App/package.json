@@ -1,0 +1,32 @@
+{
+  "name": "zyclyx_backend",
+  "version": "1.0.0",
+  "description": "\"depoying code\"",
+  "main": "Server.js",
+  "scripts": {
+    "test": "\"server,js\"",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sampathkumar0078/zyclyx_backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sampathkumar0078/zyclyx_backend/issues"
+  },
+  "homepage": "https://github.com/Sampathkumar0078/zyclyx_backend#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "core-util-is": "^1.0.2",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.2",
+    "mysql": "^2.17.1",
+    "nodemailer": "^6.3.1",
+    "randomstring": "^1.1.5"
+  }
+}
