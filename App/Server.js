@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(express.static('./app'));
 var bodyParser=require('body-parser');
 var fs=require('fs');
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 3001;
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -17,106 +17,106 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.get('/',function(req,res){
-    res.sendFile(path.join(__dirname+'/Sample.html'))
+    res.sendFile(path.join(__dirname+'/app/Sample.html'))
 })
 
 app.get('/JobApplication',function(req,res){
-        res.sendFile(path.join(__dirname+'/JobApplication.html'))
+        res.sendFile(path.join(__dirname+'/app/JobApplication.html'))
 })
 app.get('/AdminRegister',function(req,res){
-    res.sendFile(path.join(__dirname+'/AdminRegister.html'))//Admin register
+    res.sendFile(path.join(__dirname+'/app/AdminRegister.html'))//Admin register
 })
 app.get('/AdminLogin',function(req,res){
-    res.sendFile(path.join(__dirname+'/AdminLogin.html'))
+    res.sendFile(path.join(__dirname+'/app/AdminLogin.html'))
 })
 app.get('/HRNewJobPost',function(req,res){
-   res.sendFile(path.join(__dirname+'/HRNewJobPost.html'))//new job
+   res.sendFile(path.join(__dirname+'/app/HRNewJobPost.html'))//new job
 })
 app.get('/UpdateStatus',function(req,res){
-    res.sendFile(path.join(__dirname+'/UpdateStatus.html'))//Update status
+    res.sendFile(path.join(__dirname+'/app/UpdateStatus.html'))//Update status
 })
 app.get('/Enquiries',function(req,res){
-    res.sendfile(path.join(__dirname+'/Enquiries.html'))//Enquiries
+    res.sendfile(path.join(__dirname+'/app/Enquiries.html'))//Enquiries
 })
 app.get('/ForgotPassword', function(req,res){
-    res.sendFile(path.join(__dirname+'/ForgotPassword.html'))//Forgot password
+    res.sendFile(path.join(__dirname+'/app/ForgotPassword.html'))//Forgot password
 })
 app.get('/ForgotPasswordSet',function(req,res){
-    res.sendFile(path.join(__dirname+'/ForgotPasswordSet.html'))//ForgotPasswordSet
+    res.sendFile(path.join(__dirname+'/app/ForgotPasswordSet.html'))//ForgotPasswordSet
 })
 app.get('/ResetPassword', function(req,res){
-    res.sendfile(path.join(__dirname+'/ResetPassword.html'))//reset password
+    res.sendfile(path.join(__dirname+'/app/ResetPassword.html'))//reset password
 })
 app.get('/ResetPasswordSet',function(req,res){
-    res.sendFile(path.join(__dirname+'/ResetPasswordSet.html'))//Reset password set
+    res.sendFile(path.join(__dirname+'/app/ResetPasswordSet.html'))//Reset password set
 })
 app.get('/AdminHome',function(req,res){
-    res.sendFile(path.join(__dirname+'/AdminHome.html'))
+    res.sendFile(path.join(__dirname+'/app/AdminHome.html'))
 })
 app.get('/CandidateProfile',function(req,res){
-    res.sendFile(path.join(__dirname+'/CandidateProfile.html'))
+    res.sendFile(path.join(__dirname+'/app/CandidateProfile.html'))
 })
 app.get('/AllJobs',function(req,res){
-    res.sendFile(path.join(__dirname+'/AllJobs.html'))
+    res.sendFile(path.join(__dirname+'/app/AllJobs.html'))
 })
 app.get('/GetCandidatejobs',function(req,res){
-    res.sendFile(path.join(__dirname+'/GetCandidatejobs.html'))
+    res.sendFile(path.join(__dirname+'/app/GetCandidatejobs.html'))
 })
 app.get('/GetJobData',function(req,res){
-    res.sendFile(path.join(__dirname+'/GetJobData.html'))
+    res.sendFile(path.join(__dirname+'/app/GetJobData.html'))
 })
 
-var Users = require('./Users');
+var Users = require('./app/Users');
 {
 app.use('/users',Users);
 }
- var AdminRegister=require('./AdminRegister');
+ var AdminRegister=require('./app/AdminRegister');
 {
  app.use('/AdminRegister', AdminRegister);
 }
-var AdminLogin=require('./AdminLogin');{
+var AdminLogin=require('./app/AdminLogin');{
     app.use('/AdminLogin',AdminLogin)
 }
-var CandidateProfile=require('./CandidateProfile');{
+var CandidateProfile=require('./app/CandidateProfile');{
     app.use('/CandidateProfile',CandidateProfile)
 }
-var HRNewJobPost=require('./HRNewJobPost');{
+var HRNewJobPost=require('./app/HRNewJobPost');{
     app.use('/HRNewJobPost',HRNewJobPost)
 }
-var ActivePositions= require('./ActivePositions');{
+var ActivePositions= require('./app/ActivePositions');{
 app.use('/ActivePositions',ActivePositions)
 }
-var UpdateStatus=require('./UpdateStatus');{
+var UpdateStatus=require('./app/UpdateStatus');{
     app.use('/UpdateStatus',UpdateStatus);
 }
-var AllJobs=require('./AllJobs');
+var AllJobs=require('./app/AllJobs');
 {
     app.use('/AllJobs',AllJobs);
 }
-var Enquiries=require('./Enquiries');{
+var Enquiries=require('./app/Enquiries');{
     app.use('/Enquiries',Enquiries);
 }
 
-var ForgotPassword=require('./ForgotPassword');
+var ForgotPassword=require('./app/ForgotPassword');
 {
 app.use('/ForgotPassword',ForgotPassword);
 }
-var ForgotPasswordSet= require('./ForgotPasswordSet');{
+var ForgotPasswordSet= require('./app/ForgotPasswordSet');{
 app.use('/ForgotPasswordSet',ForgotPasswordSet)
 }
-var ResetPassword=require('./ResetPassword');{
+var ResetPassword=require('./app/ResetPassword');{
     app.use('/ResetPassword',ResetPassword)
 }
-var ResetPasswordSet=require('./ResetPasswordSet');{
+var ResetPasswordSet=require('./app/ResetPasswordSet');{
     app.use('/ResetPasswordSet',ResetPasswordSet)
 }
-var SearchJob=require('./SearchJob');{
+var SearchJob=require('./app/SearchJob');{
     app.use('/SearchJob',SearchJob)
 }
-var ViewEnquiries=require('./ViewEnquiries');{
+var ViewEnquiries=require('./app/ViewEnquiries');{
     app.use('/ViewEnquiries',ViewEnquiries)
 }
-var GetCandidateJobs=require('./GetCandidateJobs');{
+var GetCandidateJobs=require('./app/GetCandidateJobs');{
 app.use('/GetCandidateJobs',GetCandidateJobs)
 }
 
