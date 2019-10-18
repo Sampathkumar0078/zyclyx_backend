@@ -2,10 +2,10 @@
   "name": "zyclyx_backend",
   "version": "1.0.0",
   "description": "\"depoying code\"",
-  "main": "Server.js",
+  "main": "server.js",
   "scripts": {
     "test": "\"server,js\"",
-    "start": "node server.js"
+    "start": "node ."
   },
   "repository": {
     "type": "git",
