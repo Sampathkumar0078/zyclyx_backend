@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(express.static('./app'));
 var bodyParser=require('body-parser');
 var fs=require('fs');
-var port = process.env.PORT ;
+var port = process.env.PORT || 3002;
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -66,57 +66,57 @@ app.get('/GetJobData',function(req,res){
     res.sendFile(path.join(__dirname+'/GetJobData.html'))
 })
 
-var Users = require('./Users');
+var Users = require('./app/Users');
 {
 app.use('/users',Users);
 }
- var AdminRegister=require('./AdminRegister');
+ var AdminRegister=require('./app/AdminRegister');
 {
  app.use('/AdminRegister', AdminRegister);
 }
-var AdminLogin=require('./AdminLogin');{
+var AdminLogin=require('./app/AdminLogin');{
     app.use('/AdminLogin',AdminLogin)
 }
-var CandidateProfile=require('./CandidateProfile');{
+var CandidateProfile=require('./app/CandidateProfile');{
     app.use('/CandidateProfile',CandidateProfile)
 }
-var HRNewJobPost=require('./HRNewJobPost');{
+var HRNewJobPost=require('./app/HRNewJobPost');{
     app.use('/HRNewJobPost',HRNewJobPost)
 }
-var ActivePositions= require('./ActivePositions');{
+var ActivePositions= require('./app/ActivePositions');{
 app.use('/ActivePositions',ActivePositions)
 }
-var UpdateStatus=require('./UpdateStatus');{
+var UpdateStatus=require('./app/UpdateStatus');{
     app.use('/UpdateStatus',UpdateStatus);
 }
-var AllJobs=require('./AllJobs');
+var AllJobs=require('./app/AllJobs');
 {
     app.use('/AllJobs',AllJobs);
 }
-var Enquiries=require('./Enquiries');{
+var Enquiries=require('./app/Enquiries');{
     app.use('/Enquiries',Enquiries);
 }
 
-var ForgotPassword=require('./ForgotPassword');
+var ForgotPassword=require('./app/ForgotPassword');
 {
 app.use('/ForgotPassword',ForgotPassword);
 }
-var ForgotPasswordSet= require('./ForgotPasswordSet');{
+var ForgotPasswordSet= require('./app/ForgotPasswordSet');{
 app.use('/ForgotPasswordSet',ForgotPasswordSet)
 }
-var ResetPassword=require('./ResetPassword');{
+var ResetPassword=require('./app/ResetPassword');{
     app.use('/ResetPassword',ResetPassword)
 }
-var ResetPasswordSet=require('./ResetPasswordSet');{
+var ResetPasswordSet=require('./app/ResetPasswordSet');{
     app.use('/ResetPasswordSet',ResetPasswordSet)
 }
-var SearchJob=require('./SearchJob');{
+var SearchJob=require('./app/SearchJob');{
     app.use('/SearchJob',SearchJob)
 }
-var ViewEnquiries=require('./ViewEnquiries');{
+var ViewEnquiries=require('./app/ViewEnquiries');{
     app.use('/ViewEnquiries',ViewEnquiries)
 }
-var GetCandidateJobs=require('./GetCandidateJobs');{
+var GetCandidateJobs=require('./app/GetCandidateJobs');{
 app.use('/GetCandidateJobs',GetCandidateJobs)
 }
 
