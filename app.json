@@ -1,5 +1,5 @@
 {
-  "name": "Start on Heroku: node server.js",
+  "name": "Start on Heroku: server.js",
   "description": "A barebones Node.js app using Express 4",
   "repository": "https://github.com/Sampathkumar0078/zyclyx_backend.git",
   "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
