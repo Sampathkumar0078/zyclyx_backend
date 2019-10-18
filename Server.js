@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(express.static('./app'));
 var bodyParser=require('body-parser');
 var fs=require('fs');
-var port = process.env.PORT || 3002;
+var port = process.env.PORT ;
 
 app.use(bodyParser.json());
 app.use(cors());
