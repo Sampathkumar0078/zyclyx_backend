@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'uploads')));
 app.use(express.static('./app'));
 var bodyParser=require('body-parser');
 var fs=require('fs');
-var port = process.env.PORT ;
+var port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -51,7 +51,7 @@ app.get('/ResetPasswordSet',function(req,res){
     res.sendFile(path.join(__dirname+'/ResetPasswordSet.html'))//Reset password set
 })
 app.get('/AdminHome',function(req,res){
-    res.sendFile(path.join(__dirname+'/AdminHome.html'))
+    res.sendFile(path.join(__dirname+'/app/AdminHome.html'))
 })
 app.get('/CandidateProfile',function(req,res){
     res.sendFile(path.join(__dirname+'/CandidateProfile.html'))

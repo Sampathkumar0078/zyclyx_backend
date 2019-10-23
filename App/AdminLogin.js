@@ -27,7 +27,7 @@ var storage = multer.diskStorage({
 }
    
   var upload = multer({ storage: storage })
-  users.post('/AdminLogin',upload.single(''),verifyToken,function(req,res){
+  users.post('/AdminLogin',upload.single(''),function(req,res){
     
       var username=req.body.username;
       var password=req.body.password;

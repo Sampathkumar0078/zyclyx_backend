@@ -8,10 +8,11 @@
 </head>
 <body>
     <div id="user">
+        </div>
         <script>
 
             function getjobdata(){
-                fetch('http://192.168.1.56:3000/GetCandidateJobs/GetCandidateJobs')
+                fetch('http://localhost/GetCandidateJobs/GetCandidateJobs')
                 .then(Response=>Response.json())
                 .then(json=>{
                     return json.map(user=>{
@@ -23,6 +24,6 @@
             }
             getjobdata();
             </script>
-    </div>
+
 </body>
 </html>
